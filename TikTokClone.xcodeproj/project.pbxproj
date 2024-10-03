@@ -11,6 +11,11 @@
 		E9502C252CA677AD0026C4ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9502C242CA677AD0026C4ED /* ContentView.swift */; };
 		E9502C272CA677AF0026C4ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9502C262CA677AF0026C4ED /* Assets.xcassets */; };
 		E9502C2A2CA677AF0026C4ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9502C292CA677AF0026C4ED /* Preview Assets.xcassets */; };
+		E95B53302CA6A74B006562F9 /* VideoCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B532F2CA6A74B006562F9 /* VideoCacheManager.swift */; };
+		E95B53322CA6A76D006562F9 /* VerticalPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B53312CA6A76D006562F9 /* VerticalPager.swift */; };
+		E95B53342CA6C0B6006562F9 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B53332CA6C0B6006562F9 /* CustomVideoPlayer.swift */; };
+		E95B53362CA6C102006562F9 /* TikTokScrollView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B53352CA6C102006562F9 /* TikTokScrollView+Utils.swift */; };
+		E95B53382CA6C1D1006562F9 /* VideoMetaDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B53372CA6C1D1006562F9 /* VideoMetaDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,12 @@
 		E9502C242CA677AD0026C4ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9502C262CA677AF0026C4ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9502C292CA677AF0026C4ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E9502C302CA695B00026C4ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E95B532F2CA6A74B006562F9 /* VideoCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCacheManager.swift; sourceTree = "<group>"; };
+		E95B53312CA6A76D006562F9 /* VerticalPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalPager.swift; sourceTree = "<group>"; };
+		E95B53332CA6C0B6006562F9 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
+		E95B53352CA6C102006562F9 /* TikTokScrollView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTokScrollView+Utils.swift"; sourceTree = "<group>"; };
+		E95B53372CA6C1D1006562F9 /* VideoMetaDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMetaDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +62,16 @@
 		E9502C212CA677AD0026C4ED /* TikTokClone */ = {
 			isa = PBXGroup;
 			children = (
+				E9502C302CA695B00026C4ED /* Info.plist */,
 				E9502C222CA677AD0026C4ED /* TikTokCloneApp.swift */,
 				E9502C242CA677AD0026C4ED /* ContentView.swift */,
 				E9502C262CA677AF0026C4ED /* Assets.xcassets */,
 				E9502C282CA677AF0026C4ED /* Preview Content */,
+				E95B532F2CA6A74B006562F9 /* VideoCacheManager.swift */,
+				E95B53312CA6A76D006562F9 /* VerticalPager.swift */,
+				E95B53332CA6C0B6006562F9 /* CustomVideoPlayer.swift */,
+				E95B53352CA6C102006562F9 /* TikTokScrollView+Utils.swift */,
+				E95B53372CA6C1D1006562F9 /* VideoMetaDataView.swift */,
 			);
 			path = TikTokClone;
 			sourceTree = "<group>";
@@ -137,8 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E95B53302CA6A74B006562F9 /* VideoCacheManager.swift in Sources */,
+				E95B53382CA6C1D1006562F9 /* VideoMetaDataView.swift in Sources */,
+				E95B53362CA6C102006562F9 /* TikTokScrollView+Utils.swift in Sources */,
 				E9502C252CA677AD0026C4ED /* ContentView.swift in Sources */,
 				E9502C232CA677AD0026C4ED /* TikTokCloneApp.swift in Sources */,
+				E95B53322CA6A76D006562F9 /* VerticalPager.swift in Sources */,
+				E95B53342CA6C0B6006562F9 /* CustomVideoPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +297,7 @@
 				DEVELOPMENT_TEAM = NDWGY9K2GB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TikTokClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +327,7 @@
 				DEVELOPMENT_TEAM = NDWGY9K2GB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TikTokClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
