@@ -12,11 +12,13 @@ struct VerticalPager<Content: View>: View {
     let pageCount: Int
     @Binding var currentIndex: Int
     let content: Content
+    var pageChanged: () -> Void
     
-    init(pageCount: Int, currentIndex: Binding<Int>, @ViewBuilder content: () -> Content) {
+    init(pageCount: Int, currentIndex: Binding<Int>,pageChanged: @escaping () -> Void, @ViewBuilder content: () -> Content) {
         self.pageCount = pageCount
         self._currentIndex = currentIndex
         self.content = content()
+        self.pageChanged = pageChanged
     }
     
     @GestureState private var translation: CGFloat = 0
@@ -41,6 +43,7 @@ struct VerticalPager<Content: View>: View {
                         let newIndex = currentIndex + min(max(offset, -1), 1)
                         if newIndex >= 0 && newIndex < pageCount {
                             self.currentIndex = newIndex
+                            self.pageChanged()
                         }
                     }
                 }

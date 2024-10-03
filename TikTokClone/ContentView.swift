@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVKit
+import Combine
 
 struct VideoPlayerView: View {
     var player = AVPlayer()
@@ -29,6 +30,9 @@ struct TikTokScrollView: View {
     let videoURLs: [URL]
     @State  var currentPage: Int
     
+    @State private var previousPage = 0
+    
+    
     @State  var player = AVPlayer() // Single AVPlayer for all videos
     
     @State  var isPlaying = true // State to track if video is playing
@@ -47,9 +51,14 @@ struct TikTokScrollView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            VerticalPager(pageCount: videoURLs.count, currentIndex: $currentPage) {
+            VerticalPager(
+                pageCount: videoURLs.count,
+                currentIndex: $currentPage,
+                pageChanged: {
+                    loadAndPlayVideo(at: currentPage)
+                }
+            ) {
                 ForEach(0..<videoURLs.count, id: \.self) { index in
-                    
                     ZStack(alignment: .center) {
                         VideoPlayerView(player: player)
                             .onTapGesture {
@@ -71,11 +80,7 @@ struct TikTokScrollView: View {
                 configureAudioSession()
                 setupRemoteCommandCenter()
                 loadAndPlayVideo(at: currentPage)
-            }
-            .onChange(of: currentPage) { oldPage, newPage in
-                loadAndPlayVideo(at: currentPage)
-            }
-            .ignoresSafeArea(.all)
+            }.ignoresSafeArea(.all)
             VideoMetaDataView(
                 isPlaying: isPlaying,
                 currentTime: currentTime,
@@ -87,6 +92,14 @@ struct TikTokScrollView: View {
         }
         .ignoresSafeArea(.all)
     }
+    
+    private func checkForPageChange() {
+        if currentPage != previousPage {
+            previousPage = currentPage
+            loadAndPlayVideo(at: currentPage)
+        }
+    }
+    
 }
 
 struct ContentView: View {
